@@ -2,7 +2,7 @@ package com.example.constructiontracker
 
 import java.util.concurrent.atomic.AtomicLong
 
-class PlacemarkerMemStore {
+class PMMemory {
     private val placemarks = ArrayList<PMConstructionData>()
     private val lastId = AtomicLong(0L)
 

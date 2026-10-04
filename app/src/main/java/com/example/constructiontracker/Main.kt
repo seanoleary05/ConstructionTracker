@@ -1,10 +1,10 @@
 package com.example.constructiontracker
 
 
-import com.example.constructiontracker.PlacemarkerMemStore
+import com.example.constructiontracker.PMMemory
 import com.example.constructiontracker.PMConstructionData
 
-val store = PlacemarkerMemStore()
+val store = PMMemory()
 
 fun main() {
     println("=== Placemark Console App (Lab 1) ===")
