@@ -116,6 +116,11 @@ class MainActivity : AppCompatActivity() {
                 textSize = 16f
             }
 
+            val eircode = TextView(this).apply {
+                text = mark.eircode
+                textSize = 16f
+            }
+
             val coordinates = TextView(this).apply {
                 text = "X: ${mark.x}, Y: ${mark.y}"
                 textSize = 14f
@@ -147,6 +152,7 @@ class MainActivity : AppCompatActivity() {
 
             markLayout.addView(markTitle)
             markLayout.addView(markDescription)
+            markLayout.addView(eircode)
             markLayout.addView(coordinates)
             markLayout.addView(editButton)
             markLayout.addView(deleteButton)

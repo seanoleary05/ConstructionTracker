@@ -12,6 +12,8 @@ class AddEditActivity : AppCompatActivity() {
 
     private lateinit var titleInput: EditText
     private lateinit var descriptionInput: EditText
+
+    private lateinit var eircodeInput: EditText
     private lateinit var xInput: EditText
     private lateinit var yInput: EditText
 
@@ -42,6 +44,11 @@ class AddEditActivity : AppCompatActivity() {
 
         descriptionInput = EditText(this).apply {
             hint = "Description"
+        }
+
+        eircodeInput = EditText(this).apply {
+            hint = "Eircode (XXX XXXX) *Optional*"
+
         }
 
         xInput = EditText(this).apply {
@@ -76,6 +83,7 @@ class AddEditActivity : AppCompatActivity() {
 
         root.addView(titleInput)
         root.addView(descriptionInput)
+        root.addView(eircodeInput)
         root.addView(xInput)
         root.addView(yInput)
         root.addView(saveButton)
@@ -101,6 +109,7 @@ class AddEditActivity : AppCompatActivity() {
 
         titleInput.setText(mark.title)
         descriptionInput.setText(mark.desc)
+        eircodeInput.setText(mark.eircode)
         xInput.setText(mark.x.toString())
         yInput.setText(mark.y.toString())
     }
@@ -109,6 +118,7 @@ class AddEditActivity : AppCompatActivity() {
 
         val title = titleInput.text.toString().trim()
         val description = descriptionInput.text.toString().trim()
+        val eircode = eircodeInput.text.toString().trim()
 
         if (title.isEmpty()) {
             titleInput.error = "Title is required"
@@ -133,6 +143,7 @@ class AddEditActivity : AppCompatActivity() {
 
             val mark = PMConstructionData(
                 title = title,
+                eircode = eircode,
                 desc = description,
                 x = x,
                 y = y
@@ -152,6 +163,7 @@ class AddEditActivity : AppCompatActivity() {
                 id = editingId!!,
                 title = title,
                 desc = description,
+                eircode = eircode,
                 x = x,
                 y = y
             )
