@@ -20,6 +20,7 @@ class PMMemory {
         return if (foundPlacemark != null) {
             foundPlacemark.title = placemark.title
             foundPlacemark.desc = placemark.desc
+            foundPlacemark.eircode = placemark.eircode
             foundPlacemark.x = placemark.x
             foundPlacemark.y = placemark.y
             true

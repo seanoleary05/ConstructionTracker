@@ -1,6 +1,7 @@
 package com.example.constructiontracker
 
 import android.os.Bundle
+import android.text.InputFilter
 import android.text.InputType
 import android.widget.Button
 import android.widget.EditText
@@ -47,7 +48,8 @@ class AddEditActivity : AppCompatActivity() {
         }
 
         eircodeInput = EditText(this).apply {
-            hint = "Eircode (XXX XXXX) *Optional*"
+            hint = "Eircode (XXX XXXX)"
+
 
         }
 
@@ -118,12 +120,14 @@ class AddEditActivity : AppCompatActivity() {
 
         val title = titleInput.text.toString().trim()
         val description = descriptionInput.text.toString().trim()
-        val eircode = eircodeInput.text.toString().trim()
+        val eircode =  if  (eircodeInput.text.toString().trim() != "") eircodeInput.text.toString().trim() else "No eircode Given"
+
 
         if (title.isEmpty()) {
             titleInput.error = "Title is required"
             return
         }
+
 
         val x = xInput.text.toString().toDoubleOrNull()
 
@@ -143,8 +147,8 @@ class AddEditActivity : AppCompatActivity() {
 
             val mark = PMConstructionData(
                 title = title,
-                eircode = eircode,
                 desc = description,
+                eircode = eircode,
                 x = x,
                 y = y
             )
