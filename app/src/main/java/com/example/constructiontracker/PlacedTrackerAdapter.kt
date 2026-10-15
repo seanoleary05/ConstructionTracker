@@ -65,7 +65,7 @@ class PlacedTrackerAdapter(
             mark.desc
 
         holder.eircodeText.text =
-            mark.eircode
+            mark.eircode.take(8)
 
         holder.coordinatesText.text =
             "X: ${mark.x}, Y: ${mark.y}"
