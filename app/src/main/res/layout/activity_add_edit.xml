@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#D39566">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#D39566"
+        android:orientation="vertical"
+        android:padding="32dp">
+
+        <TextView
+            android:id="@+id/formTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:gravity="center_horizontal"
+            android:text="Create Construction Tracker"
+            android:textColor="#2f4858"
+            android:textSize="34sp"
+            android:textStyle="bold" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/titleInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#E2C1AC"
+                android:fontFamily="monospace"
+                android:hint="Title"
+                android:textColor="#2f4858" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/descInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#E2C1AC"
+                android:fontFamily="monospace"
+                android:hint="Description"
+                android:textColor="#2f4858" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/eircodeInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#E2C1AC"
+                android:fontFamily="monospace"
+                android:hint="Eircode"
+                android:textColor="#2f4858" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/xInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#E2C1AC"
+                android:fontFamily="monospace"
+                android:hint="X"
+                android:textColor="#2f4858" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/yInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#E2C1AC"
+                android:fontFamily="monospace"
+                android:hint="Y"
+                android:textColor="#2f4858" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/saveButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#4d5673"
+            android:fontFamily="monospace"
+            android:text="Save"
+            android:textColorLink="#4d5673"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/cancelButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#4d5673"
+            android:fontFamily="monospace"
+            android:text="Cancel"
+            android:textStyle="bold" />
+    </LinearLayout>
+</ScrollView>
