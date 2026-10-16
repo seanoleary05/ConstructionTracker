@@ -97,12 +97,18 @@ class AddEditActivity : AppCompatActivity() {
             descriptionInput.text.toString().trim()
 
         val eircode =
-            eircodeInput.text.toString().trim().take(8)
+            eircodeInput.text.toString().trim()
 
         if (title.isEmpty()) {
             titleInput.error = "Title is required"
             return
         }
+
+        if (eircode.length != 8  && eircode.isNotEmpty()) {
+            eircodeInput.error ="1"
+        }
+
+
 
         val x =
             xInput.text.toString().toDoubleOrNull()

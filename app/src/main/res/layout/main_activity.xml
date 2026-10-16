@@ -3,11 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#d39566"
     android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="188dp"
+        android:background="#d39566"
         android:orientation="horizontal">
 
         <ImageView
@@ -41,13 +43,19 @@
         android:id="@+id/addTrackerButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="#4d5673"
+        android:fontFamily="monospace"
         android:gravity="bottom|center_horizontal"
-        android:text="Add Construction Tracker" />
+        android:text="Add Construction Tracker"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/listTrackerButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="List All Trackers" />
+        android:backgroundTint="#4d5673"
+        android:fontFamily="monospace"
+        android:text="List All Trackers"
+        android:textStyle="bold" />
 
 </LinearLayout>
