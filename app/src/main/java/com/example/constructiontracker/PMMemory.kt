@@ -11,11 +11,13 @@ class PMMemory {
     }
 
     fun create(placemark: PMConstructionData) {
+        placemark.validate()
         placemark.id = lastId.incrementAndGet()
         placemarks.add(placemark)
     }
 
     fun update(placemark: PMConstructionData): Boolean {
+        placemark.validate()
         val foundPlacemark = findOne(placemark.id)
         return if (foundPlacemark != null) {
             foundPlacemark.title = placemark.title
