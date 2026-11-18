@@ -25,6 +25,7 @@ class PMMemory {
             foundPlacemark.eircode = placemark.eircode
             foundPlacemark.x = placemark.x
             foundPlacemark.y = placemark.y
+            foundPlacemark.imageUri = placemark.imageUri
             true
         } else {
             false
