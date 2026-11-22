@@ -1,5 +1,6 @@
 package com.example.constructiontracker
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -27,6 +28,8 @@ class AddEditActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+
+
         setContentView(R.layout.activity_add_edit)
 
         titleInput =
@@ -50,6 +53,17 @@ class AddEditActivity : AppCompatActivity() {
         val cancelButton =
             findViewById<Button>(R.id.cancelButton)
 
+
+
+        findViewById<Button>(R.id.addButton).setOnClickListener {
+            val intent = Intent(this, MapPickerActivity::class.java)
+            mapPicker.launch(intent)
+        }
+
+        imagePreview = findViewById(R.id.addImageView)
+
+
+
         editingId =
             intent.getLongExtra("id", -1L)
                 .takeIf { it != -1L }
@@ -62,7 +76,6 @@ class AddEditActivity : AppCompatActivity() {
             loadExistingMark(editingId!!)
         }
 
-        imagePreview = findViewById(R.id.addImageView)
 
         findViewById<Button>(R.id.ImageButton).setOnClickListener {
             imagePicker.launch(arrayOf("image/*"))
@@ -96,6 +109,24 @@ class AddEditActivity : AppCompatActivity() {
             }
         }
 
+    val mapPicker =
+        registerForActivityResult(
+            ActivityResultContracts.StartActivityForResult()
+        ) { result ->
+            if (result.resultCode == RESULT_OK) {
+                val data = result.data ?: return@registerForActivityResult
+                val selectedLatitude = data.getDoubleExtra("latitude", 0.0)
+                val selectedLongitude = data.getDoubleExtra("longitude", 0.0)
+
+                selectedLatitude?.let {
+                    xInput.setText(it.toString())
+                }
+
+                selectedLongitude?.let {
+                    yInput.setText(it.toString())
+                }
+            }
+        }
 
 
     private fun loadExistingMark(id: Long) {

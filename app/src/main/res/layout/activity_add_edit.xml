@@ -16,7 +16,7 @@
         <TextView
             android:id="@+id/formTitle"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="119dp"
             android:fontFamily="monospace"
             android:gravity="center_horizontal"
             android:text="Create Construction Tracker"
@@ -99,7 +99,7 @@
         <ImageView
             android:id="@+id/addImageView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="77dp"
             android:adjustViewBounds="true"
             android:maxHeight="180dp"
             android:scaleType="centerCrop"
@@ -109,7 +109,13 @@
             android:id="@+id/ImageButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Button" />
+            android:text="Add Image" />
+
+        <Button
+            android:id="@+id/addButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add Coords" />
 
         <Button
             android:id="@+id/saveButton"
