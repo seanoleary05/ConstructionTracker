@@ -12,8 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 class PlacedTrackerAdapter(
     private var marks: List<PMConstructionData>,
-    private val onEdit: (PMConstructionData) -> Unit,
-    private val onDelete: (PMConstructionData) -> Unit
+    private val listener: OnMarkListener
 ) : RecyclerView.Adapter<PlacedTrackerAdapter.MarkViewHolder>() {
 
     class MarkViewHolder(itemView: View) :
@@ -38,11 +37,7 @@ class PlacedTrackerAdapter(
         val markImage: ImageView =
             itemView.findViewById(R.id.markImage)
 
-        val editButton: Button =
-            itemView.findViewById(R.id.editButton)
 
-        val deleteButton: Button =
-            itemView.findViewById(R.id.deleteButton)
     }
 
     override fun onCreateViewHolder(
@@ -90,12 +85,12 @@ class PlacedTrackerAdapter(
             )
         }
 
-        holder.editButton.setOnClickListener {
-            onEdit(mark)
+        holder.itemView.setOnClickListener {
+            listener.onMarkClick(mark)
         }
 
-        holder.deleteButton.setOnClickListener {
-            onDelete(mark)
+        holder.itemView.setOnLongClickListener {
+            listener.onMarkLongClick(mark)
         }
 
     }

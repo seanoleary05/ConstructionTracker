@@ -43,5 +43,7 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(libs.androidx.junit)
     implementation("org.osmdroid:osmdroid-android:6.1.20")
+    implementation("com.jakewharton.timber:timber:5.0.1")
+
 
 }

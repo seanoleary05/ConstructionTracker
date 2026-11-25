@@ -7,6 +7,7 @@ import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import timber.log.Timber
 
 class TrackerListActivity : AppCompatActivity() {
 
@@ -20,17 +21,34 @@ class TrackerListActivity : AppCompatActivity() {
 
         recyclerView =
             findViewById(R.id.trackersRecyclerview)
-
         adapter = PlacedTrackerAdapter(
+
             marks = AppData.placedMarks.findAll(),
 
-            onEdit = { mark ->
-                editMark(mark)
-            },
+            listener = object : OnMarkListener {
 
-            onDelete = { mark ->
-                deleteMark(mark)
+
+
+                override fun onMarkClick(mark: PMConstructionData) {
+
+                    editMark(mark)
+
+                }
+
+
+
+                override fun onMarkLongClick(mark: PMConstructionData): Boolean {
+
+                    Timber.d("Long press on mark id=${mark.id}, title=${mark.title}")
+
+                    deleteMark(mark)
+
+                    return true
+
+                }
+
             }
+
         )
 
         recyclerView.layoutManager =
@@ -78,4 +96,5 @@ class TrackerListActivity : AppCompatActivity() {
             AppData.placedMarks.findAll()
         )
     }
+
 }

@@ -50,31 +50,4 @@
         android:scaleType="centerCrop"
         tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/editButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:backgroundTint="#4d5673"
-            android:fontFamily="monospace"
-            android:text="Edit"
-            android:textStyle="bold" />
-
-        <Button
-            android:id="@+id/deleteButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:backgroundTint="#4d5673"
-            android:fontFamily="monospace"
-            android:text="Delete"
-            android:textStyle="bold" />
-
-    </LinearLayout>
-
 </LinearLayout>
