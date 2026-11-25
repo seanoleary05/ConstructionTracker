@@ -4,6 +4,7 @@ package com.example.constructiontracker
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -90,11 +91,23 @@ class TrackerListActivity : AppCompatActivity() {
 
     private fun deleteMark(mark: PMConstructionData) {
 
-        AppData.placedMarks.delete(mark.id)
+        AlertDialog.Builder(this)
+            .setTitle("Delete Confirmation")
+            .setMessage("Do you want to delete \"${mark.title}\"?")
+            .setNegativeButton("Cancel",null)
+            .setPositiveButton("Delete Mark"){_, _ ->
+                AppData.placedMarks.delete(mark.id)
 
-        adapter.updateMarks(
-            AppData.placedMarks.findAll()
-        )
+                adapter.updateMarks(
+                    AppData.placedMarks.findAll()
+
+                )
+            }
+
+
+
+
+        .show()
     }
 
 }
