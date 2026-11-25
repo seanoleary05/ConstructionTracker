@@ -91,12 +91,14 @@ class MapPickerActivity : AppCompatActivity() {
             val point = GeoPoint(
                 placemark.x, // latitude
                 placemark.y  // longitude
+
             )
 
             val marker = Marker(map).apply {
                 position = point
                 title = placemark.title
                 snippet = placemark.desc
+
                 setAnchor(
                     Marker.ANCHOR_CENTER,
                     Marker.ANCHOR_BOTTOM

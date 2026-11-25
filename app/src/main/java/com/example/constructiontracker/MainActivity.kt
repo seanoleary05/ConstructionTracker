@@ -27,6 +27,9 @@ class MainActivity : AppCompatActivity() {
         val addTrackerButton =
             findViewById<Button>(R.id.addTrackerButton)
 
+        val showMapButton =
+            findViewById<Button>(R.id.showMapButton)
+
         listTrackersButton.setOnClickListener {
             startActivity(
                 Intent(this, TrackerListActivity::class.java)
@@ -36,6 +39,12 @@ class MainActivity : AppCompatActivity() {
         addTrackerButton.setOnClickListener {
             startActivity(
                 Intent(this, AddEditActivity::class.java)
+            )
+        }
+
+        showMapButton.setOnClickListener {
+            startActivity(
+                Intent(this, PlaceMarkMapActivity::class.java)
             )
         }
 

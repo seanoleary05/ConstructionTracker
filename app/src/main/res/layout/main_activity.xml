@@ -45,7 +45,6 @@
         android:layout_height="wrap_content"
         android:backgroundTint="#4d5673"
         android:fontFamily="monospace"
-        android:gravity="bottom|center_horizontal"
         android:text="Add Construction Tracker"
         android:textStyle="bold" />
 
@@ -56,6 +55,15 @@
         android:backgroundTint="#4d5673"
         android:fontFamily="monospace"
         android:text="List All Trackers"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/showMapButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#4d5673"
+        android:fontFamily="monospace"
+        android:text="Show Full Map"
         android:textStyle="bold" />
 
 </LinearLayout>
